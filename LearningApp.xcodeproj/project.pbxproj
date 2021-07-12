@@ -12,6 +12,9 @@
 		40B451F9269CB8C000934D06 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40B451F8269CB8C000934D06 /* Assets.xcassets */; };
 		40B451FC269CB8C000934D06 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40B451FB269CB8C000934D06 /* Preview Assets.xcassets */; };
 		40B4520C269CB97B00934D06 /* ContentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B4520B269CB97B00934D06 /* ContentModel.swift */; };
+		40B45210269CBED000934D06 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 40B4520E269CBED000934D06 /* data.json */; };
+		40B45211269CBED000934D06 /* style.html in Resources */ = {isa = PBXBuildFile; fileRef = 40B4520F269CBED000934D06 /* style.html */; };
+		40B45214269CC0B200934D06 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B45213269CC0B200934D06 /* Models.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,9 @@
 		40B451FB269CB8C000934D06 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		40B451FD269CB8C000934D06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		40B4520B269CB97B00934D06 /* ContentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentModel.swift; sourceTree = "<group>"; };
+		40B4520E269CBED000934D06 /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
+		40B4520F269CBED000934D06 /* style.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = style.html; sourceTree = "<group>"; };
+		40B45213269CC0B200934D06 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +100,7 @@
 		40B45208269CB92D00934D06 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				40B45213269CC0B200934D06 /* Models.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -101,6 +108,8 @@
 		40B45209269CB93400934D06 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				40B4520E269CBED000934D06 /* data.json */,
+				40B4520F269CBED000934D06 /* style.html */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -170,6 +179,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				40B451FC269CB8C000934D06 /* Preview Assets.xcassets in Resources */,
+				40B45210269CBED000934D06 /* data.json in Resources */,
+				40B45211269CBED000934D06 /* style.html in Resources */,
 				40B451F9269CB8C000934D06 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -184,6 +195,7 @@
 				40B451F7269CB8B600934D06 /* HomeView.swift in Sources */,
 				40B451F5269CB8B600934D06 /* LearningApp.swift in Sources */,
 				40B4520C269CB97B00934D06 /* ContentModel.swift in Sources */,
+				40B45214269CC0B200934D06 /* Models.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
