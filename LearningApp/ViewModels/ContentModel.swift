@@ -34,6 +34,7 @@ class ContentModel: ObservableObject {
     
     init() {
         getLocalData()
+        getRemoteData()
     }
     
     //MARK: - Data Methods
@@ -72,6 +73,60 @@ class ContentModel: ObservableObject {
             //Log error
             print("Could not parse style data")
         }
+        
+    }
+    
+    func getRemoteData() {
+        
+        //String path
+        let urlString = "https://whitfield17.github.io/learning-app-data/data2.json"
+        
+        //Create a url object
+        let url = URL(string: urlString)
+        
+        guard url != nil else {
+            //Couldnt create url
+            return
+        }
+        
+        //Create a URLRequest object
+        let request = URLRequest(url: url!)
+        
+        //Get the session and kick off the task
+        let session = URLSession.shared
+        
+        let dataTask = session.dataTask(with: request) { (data, response, error) in
+            
+            //Check if theres an error
+            guard error == nil else {
+                //There was an error
+                return
+            }
+            
+            do {
+                //Create json decoder
+                let decoder = JSONDecoder()
+                
+                //Decode
+                let modules = try decoder.decode([Module].self, from: data!)
+                
+                //self.modules += modules causes View code to update
+                //View code must be updated on the main thread and not a background thread(which is handling the network request)
+                //Code within the DispatchQueue.main.async will be run on the main thread
+                DispatchQueue.main.async {
+                    //Append parsed modules into modules property
+                    self.modules += modules
+                }
+
+            } catch {
+                //Couldnt parse json
+            }
+
+            
+        }
+        
+        //Kick off data task
+        dataTask.resume()
         
     }
     
@@ -127,6 +182,10 @@ class ContentModel: ObservableObject {
     }
     
     func hasNextLesson() -> Bool {
+        
+        guard currentModule != nil else {
+            return false
+        }
         
         return currentLessonIndex + 1 < currentModule!.content.lessons.count
     }
