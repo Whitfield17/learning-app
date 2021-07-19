@@ -77,35 +77,58 @@ struct TestView: View {
                 .padding()
             }
             
-            //Button
-            Button(action: {
-            
-            //Change submitted state to true
-            submitted = true
-            
-            //Check the answer, and increment the counter if correct
-            if selectedAnswerIndex == model.currentQuestion!.correctIndex {
-            numCorrect += 1
+                //Submit Button
+                Button(action: {
+                    
+                    //Check if answer has been submitted
+                    if submitted == true {
+                        
+                        //Answer has already been submitted, move to next question
+                        model.nextQuestion()
+                        
+                        //Reset properties
+                        submitted = false
+                        selectedAnswerIndex = nil
+                    } else {
+                        
+                        //Change submitted state to true
+                        submitted = true
+                        
+                        //Check the answer, and increment the counter if correct
+                        if selectedAnswerIndex == model.currentQuestion!.correctIndex {
+                            numCorrect += 1
+                        }
+                    }
+                }, label: {
+                    ZStack {
+                            RectangleCard(color: .green)
+                                .frame(height: 48)
+                
+                            Text("\(buttonText)")
+                                .bold()
+                                .foregroundColor(.white)
+                    }
+                    .padding()
+                })
+                .disabled(selectedAnswerIndex == nil)
             }
-            
-            }, label: {
-            ZStack {
-            RectangleCard(color: .green)
-            .frame(height: 48)
-            
-            Text("Submit")
-            .bold()
-            .foregroundColor(.white)
-            
-            }
-            .padding()
-            })
-            .disabled(selectedAnswerIndex == nil)
+            .navigationBarTitle("\(model.currentModule?.category ?? "") Test")
         }
-        .navigationBarTitle("\(model.currentModule?.category ?? "") Test")
     }
     
-}
+    var buttonText: String {
+        
+        //Check if answer has been submitted
+        if submitted == true {
+            if model.currentQuestionIndex + 1 == model.currentModule!.test.questions.count {
+                return "Finish"
+            } else {
+                return "Next"
+            }
+        } else {
+            return "Submit"
+        }
+    }
 }
 
 struct TestView_Previews: PreviewProvider {
