@@ -31,9 +31,11 @@ struct HomeView: View {
                                     destination:
                                         ContentView()
                                         .onAppear(perform: {
-                                            model.beginModule(module.id)
+                                            model.getLessons(module: module) {
+                                                model.beginModule(module.id)
+                                            }
                                         }),
-                                    tag: module.id,
+                                    tag: module.id.hash,
                                     selection: $model.currentContentSelected,
                                     label: {
                                         //Learning Card
@@ -43,9 +45,11 @@ struct HomeView: View {
                                 NavigationLink(
                                     destination: TestView()
                                         .onAppear(perform: {
-                                            model.beginTest(module.id)
+                                            model.getQuestions(module: module) {
+                                                model.beginTest(module.id)
+                                            }
                                         }),
-                                    tag: module.id,
+                                    tag: module.id.hash,
                                     selection: $model.currentTestSelected,
                                     label: {
                                         //Test Card
