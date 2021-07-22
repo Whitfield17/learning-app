@@ -43,6 +43,9 @@ struct LaunchView: View {
                         }
                     }
             }
+            .onAppear {
+                model.getModules()
+            }
         }
     }
 }
