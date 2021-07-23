@@ -87,11 +87,14 @@ struct TestView: View {
                         //Check if its the last question
                         if model.currentQuestionIndex + 1 == model.currentModule!.test.questions.count {
                             
+                            //Check next question and save progress
+                            model.nextQuestion()
+                            
                             //Show the results
                             showResults = true
                         } else {
                             
-                            //Answer has already been submitted, move to next question
+                            //Answer has already been submitted, move to next question, and save progress
                             model.nextQuestion()
                             
                             //Reset properties
