@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		407003D626AA0FE600F8ADAC /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407003D526AA0FE600F8ADAC /* UserService.swift */; };
+		407003D926AC5FDB00F8ADAC /* ResumeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407003D826AC5FDB00F8ADAC /* ResumeView.swift */; };
 		40B451F5269CB8B600934D06 /* LearningApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B451F4269CB8B600934D06 /* LearningApp.swift */; };
 		40B451F7269CB8B600934D06 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B451F6269CB8B600934D06 /* HomeView.swift */; };
 		40B451F9269CB8C000934D06 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40B451F8269CB8C000934D06 /* Assets.xcassets */; };
@@ -36,6 +37,7 @@
 
 /* Begin PBXFileReference section */
 		407003D526AA0FE600F8ADAC /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		407003D826AC5FDB00F8ADAC /* ResumeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResumeView.swift; sourceTree = "<group>"; };
 		40B451F1269CB8B600934D06 /* LearningApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LearningApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40B451F4269CB8B600934D06 /* LearningApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningApp.swift; sourceTree = "<group>"; };
 		40B451F6269CB8B600934D06 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -187,6 +189,7 @@
 			children = (
 				40B451F6269CB8B600934D06 /* HomeView.swift */,
 				40B45216269E089000934D06 /* HomeViewRow.swift */,
+				407003D826AC5FDB00F8ADAC /* ResumeView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -309,6 +312,7 @@
 				40B451F5269CB8B600934D06 /* LearningApp.swift in Sources */,
 				40B4527326A8D1B600934D06 /* ProfileView.swift in Sources */,
 				40B4521D269F59FE00934D06 /* ContentViewRow.swift in Sources */,
+				407003D926AC5FDB00F8ADAC /* ResumeView.swift in Sources */,
 				40B4527026A8D18A00934D06 /* LoginView.swift in Sources */,
 				40B4522926A0B9AE00934D06 /* CodeTextView.swift in Sources */,
 				40B4520C269CB97B00934D06 /* ContentModel.swift in Sources */,
